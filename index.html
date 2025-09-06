@@ -31,7 +31,6 @@
     text-align:center;
   }
 
-  /* header sutil */
   .metadados {
     margin-bottom:18px;
     opacity:0.95;
@@ -39,7 +38,6 @@
     letter-spacing:0.2px;
   }
 
-  /* container do envelope */
   .envelope-wrap{
     position:relative;
     width:100%;
@@ -47,7 +45,6 @@
     transform-style:preserve-3d;
   }
 
-  /* sombra embaixo do envelope */
   .sombra {
     position:absolute;
     left:50%;
@@ -61,7 +58,6 @@
     pointer-events:none;
   }
 
-  /* corpo do envelope */
   .envelope{
     width:100%;
     height:100%;
@@ -75,7 +71,6 @@
     transition: transform 600ms cubic-bezier(.2,.9,.25,1);
   }
 
-  /* aba do envelope (triângulo frontal) */
   .aba{
     position:absolute;
     left:50%;
@@ -95,7 +90,6 @@
     justify-content:center;
   }
 
-  /* lacre decorativo em formato de coração */
   .lacre{
     position:absolute;
     left:44.5%;
@@ -120,7 +114,6 @@
     transform: translateY(-1px);
   }
 
-  /* cartão dentro do envelope */
   .cartao{
     position:absolute;
     left:50%;
@@ -159,7 +152,6 @@
   }
 
 
-  /* quando aberto */
   .envelope.aberto .aba{
     transform: translateX(-50%) rotateX(-180deg) translateY(-6px);
     transition-duration:800ms;
@@ -173,7 +165,6 @@
     transform: translateY(-8px) rotateX(4deg);
   }
 
-  /* brilhinhos ao redor */
   .brilhos{
     position:absolute;
     inset: -20% -20% auto -20%;
@@ -196,7 +187,6 @@
     100%{ transform: translateY(0) scale(1); opacity:0.95; }
   }
 
-  /* ajustes responsivos */
   @media (min-width:700px){
     .cena{ width:420px; }
     .envelope-wrap{ height:300px; }
@@ -218,7 +208,6 @@
         <div class="cartao" id="cartao" aria-live="polite">
           <h2 class="titulo" id="cartao-titulo">Para você, Duda, com carinho</h2>
           <div class="mensagem" id="cartao-msg">
-            <!-- Mensagem em Times New Roman. Edite aqui -->
             Meu amor,
             
             Hoje é o seu dia, e novamente um feliz aniversário. Sei que está longe de casa, da sua terra Natal, mas espero que consiga aproveitar ao máximo esse dia especial, seu dia. Você merece todo o brilho do mundo, desejo tudo de bom a ti, sempre. Parabéns e feliz 15 aninhos <3
@@ -229,7 +218,6 @@
         </div>
       </div>
 
-      <!-- decorativo -->
       <div class="brilhos" aria-hidden="true">
         <span style="left:6%; top:12%; animation-delay:0s;"></span>
         <span style="left:86%; top:8%; animation-delay:.8s; width:6px;height:6px;"></span>
@@ -240,7 +228,6 @@
     </div>
 
 <script>
-  // comportamento de abrir/fechar e animação ao clicar
   (function(){
     const env = document.getElementById('envelope');
     const cartao = document.getElementById('cartao');
@@ -250,10 +237,7 @@
     env.addEventListener('click', () => {
       aberto = !aberto;
       env.classList.toggle('aberto', aberto);
-      // acessibilidade: rolar levemente o cartão ao subir
       if(aberto){
-        // opção: tocar um som suave (desativado por padrão)
-        // new Audio('som-abertura.mp3').play().catch(()=>{});
       }
     });
 
@@ -289,7 +273,7 @@
           alert("Eu te amo, princesinha. Feliz aniversário (06/09)! 💖");
           nomeValido = true;
         } else {
-          alert(`Olá, ${nome}!\n\nEsse nome não está na lista especial...\nTente de novo, por favor!`);
+          alert(`Olá, ${nome}!\n\nEsse nome não é válido...\nTente de novo, por favor, ou se esse for de fato seu nome, se retire!`);
         }
       }
     });
@@ -298,3 +282,4 @@
 </script>
 </body>
 </html>
+
